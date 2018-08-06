@@ -1,0 +1,31 @@
+/**
+    Custom Taxonomy Marques
+ */
+
+add_action( 'init', 'custom_taxonomy_item', 0 );
+
+function custom_taxonomy_Item()  {
+
+$labels = array(
+    'name'                       => 'Marques',
+    'singular_name'              => 'Marques',
+    'menu_name'                  => 'Marques',
+    'all_items'                  => 'Tous les marques',
+    'new_item_name'              => 'Nouveau nom de la marque',
+    'add_new_item'               => 'Ajouter une nouvelle marque',
+    'edit_item'                  => 'Modifier marque',
+    'update_item'                => 'Update marque',
+    'add_or_remove_items'        => 'Add or remove Marques',
+);
+$args = array(
+    'labels'                     => $labels,
+    'hierarchical'               => true,
+    'public'                     => true,
+    'show_ui'                    => true,
+    'show_admin_column'          => true,
+    'show_in_nav_menus'          => true,
+    'show_tagcloud'              => true,
+);
+register_taxonomy( 'marque', 'product', $args );
+
+}
